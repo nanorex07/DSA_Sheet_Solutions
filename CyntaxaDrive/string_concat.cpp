@@ -7,11 +7,18 @@ using namespace std;
 
 string solve(string a, string b) {
     if (a.size() != b.size()) return "-1";
-    string res(int());
-
+    int n = a.size();
+    string res(2*n, ' ');
+    for(int i = 0; i < 2*n; i+=2){
+        res[i] = a[i/2];
+        res[i+1] = b[i/2];
+    }
+    return res;
 }
 
 int main () {
-    int n = 15;
-    pattern(n);
+    string a = "hello";
+    string b = "world";
+    string ans = solve(a, b);
+    cout << ans << endl;
 }
